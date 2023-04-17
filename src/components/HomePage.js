@@ -31,7 +31,7 @@ const HomePage = (props) => {
         setAccessories(true)
     }
     return (
-        <>  
+        <div class='home-container'>  
             <h1>HomePage</h1>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -108,7 +108,7 @@ const HomePage = (props) => {
                 <>
                 </>
             )}
-        </>
+        </div>
     )
 }
 
