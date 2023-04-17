@@ -2,7 +2,6 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Profile from './components/Profile'
-import Search from './components/Search';
 import About from './components/About';
 import HomePage from './components/HomePage'
 const App = () => {
@@ -37,8 +36,7 @@ const App = () => {
       getItems()
     })
   }
-
-
+  
   const homeToggle = () => {
     setHome(true)
     setProfile(false)
@@ -62,7 +60,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Shopifee</h1>
+      <h1 id='logo'>SwiftShop</h1>
       {home ? (
         <>
           <HomePage

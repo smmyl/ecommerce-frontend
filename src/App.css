@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.items{
+  display: flex;
+}
 .card {
   width: 300px;
+}
+
+#logo {
+  font-family: 'Oswald', sans-serif;
 }

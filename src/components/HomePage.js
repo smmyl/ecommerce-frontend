@@ -5,33 +5,59 @@ const HomePage = (props) => {
     const [clothes, setClothes] = useState(false);
     const [shoes, setShoes] = useState(false);
     const [accessories, setAccessories] = useState(false);
+    const [electronics, setElectronics] = useState(false);
+    const [homeGoods, setHomeGoods] = useState(false)
 
     const allToggle = () => {
         setAll(true)
         setClothes(false)
         setShoes(false)
         setAccessories(false)
+        setElectronics(false)
+        setHomeGoods(false)
     }
     const clothesToggle = () => {
         setAll(false)
         setClothes(true)
         setShoes(false)
         setAccessories(false)
+        setElectronics(false)
+        setHomeGoods(false)
     }
     const shoesToggle = () => {
         setAll(false)
         setClothes(false)
         setShoes(true)
         setAccessories(false)
+        setElectronics(false)
+        setHomeGoods(false)
     }
     const accessoriesToggle = () => {
         setAll(false)
         setClothes(false)
         setShoes(false)
         setAccessories(true)
+        setElectronics(false)
+        setHomeGoods(false)
+    }
+    const electronicsToggle = () => {
+        setAll(false)
+        setClothes(false)
+        setShoes(false)
+        setAccessories(false)
+        setElectronics(true)
+        setHomeGoods(false)
+    }
+    const homeGoodsToggle = () => {
+        setAll(false)
+        setClothes(false)
+        setShoes(false)
+        setAccessories(false)
+        setElectronics(false)
+        setHomeGoods(true)
     }
     return (
-        <>  
+        <div class='home-container'>  
             <h1>HomePage</h1>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -61,6 +87,8 @@ const HomePage = (props) => {
             <button onClick = {clothesToggle}>Clothes</button>
             <button onClick = {shoesToggle}>Shoes</button>
             <button onClick = {accessoriesToggle}>Accessories</button>
+            <button onClick = {electronicsToggle}>Electronics</button>
+            <button onClick = {homeGoodsToggle}>Home Goods</button>
             {all ? (
                 <div className='items'>
                 {props.items.map((item) => {
@@ -70,7 +98,7 @@ const HomePage = (props) => {
                             <img src = {item.image} class='card-img-top'></img>
                             <div class='card-body'>
                                 <h3 class='card-title'>{item.name}</h3>
-                                <p class='card-text'>Price: {item.price}</p>
+                                <p class='card-text'>Price: ${item.price}</p>
                                 <p class='card-text'>Gender: {item.gender}</p>
                                 <p class='card-text'>Size: {item.clothing_size}</p>
                                 <p class='card-text'>Description: {item.description}</p>
@@ -108,7 +136,23 @@ const HomePage = (props) => {
                 <>
                 </>
             )}
-        </>
+            {electronics ? (
+                <>
+                    <h1>ELECTRONICS</h1>
+                </>
+            ) : (
+                <>
+                </>
+            )}
+            {homeGoods ? (
+                <>
+                    <h1>HOME GOODS</h1>
+                </>
+            ) : (
+                <>
+                </>
+            )}
+        </div>
     )
 }
 
