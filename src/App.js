@@ -31,7 +31,7 @@ const App = () => {
       getItems()
     })
   }
-  
+
   const [items, setItems] = useState([])
   const [home, setHome] = useState(true)
   const [profile, setProfile] = useState(false)
