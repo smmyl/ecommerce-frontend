@@ -33,6 +33,30 @@ const HomePage = (props) => {
     return (
         <>  
             <h1>HomePage</h1>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" onClick={props.profileToggle}>Profile</a>
+                </li>
+                {/* <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onClick={props.homeToggle}>Home</a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Clothes</a>
+                    <a class="dropdown-item" href="#">Shoes</a>
+                    <a class="dropdown-item" href="#">Accessories</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" onClick={props.homeToggle}>Home</a>
+                    </div>
+                </li> */}
+                <li class="nav-item">
+                    <a class="nav-link active" onClick={props.homeToggle}>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Contact</a>
+                </li>
+            </ul>
             <button onClick = {allToggle}>ALL</button>
             <button onClick = {clothesToggle}>Clothes</button>
             <button onClick = {shoesToggle}>Shoes</button>
@@ -41,14 +65,18 @@ const HomePage = (props) => {
                 <div className='items'>
                 {props.items.map((item) => {
                     return (
-                        <div className='item' key={item.id}>
-                        <img src = {item.image}></img>
-                        <h3>Name: {item.name}</h3>
-                        <h4>Price: {item.price}</h4>
-                        <h4>Gender: {item.gender}</h4>
-                        <h4>Size: {item.clothing_size}</h4>
-                        <p>Description: {item.description}</p>
+                        <>
+                        <div class='card' key={item.id}>
+                            <img src = {item.image} class='card-img-top'></img>
+                            <div class='card-body'>
+                                <h3 class='card-title'>{item.name}</h3>
+                                <p class='card-text'>Price: {item.price}</p>
+                                <p class='card-text'>Gender: {item.gender}</p>
+                                <p class='card-text'>Size: {item.clothing_size}</p>
+                                <p class='card-text'>Description: {item.description}</p>
+                            </div>
                         </div>
+                        </>
                     )
                     })}
                 </div>

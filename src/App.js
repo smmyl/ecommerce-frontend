@@ -56,12 +56,12 @@ const App = () => {
   return (
     <>
       <h1>Shopifee</h1>
-      <button onClick={homeToggle}>home</button>
-      <button onClick={profileToggle}>profile</button>
       {home ? (
         <>
           <HomePage
             items={items}
+            homeToggle={homeToggle}
+            profileToggle={profileToggle}
           />
         </>
       ) : (
@@ -72,6 +72,8 @@ const App = () => {
         <>
           <Profile 
             items={items}
+            homeToggle={homeToggle}
+            profileToggle={profileToggle}
             handleCreate={handleCreate}
             handleUpdate={handleUpdate}
             handleDelete={handleDelete}
