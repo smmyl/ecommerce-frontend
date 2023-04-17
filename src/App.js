@@ -43,6 +43,7 @@ const App = () => {
       <HomePage
         items={items}
       />
+      <h1>MarketPlace App</h1>
       <Add handleCreate={handleCreate}/>
       {/* <div className='items'>
         {items.map((item) => {
