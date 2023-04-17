@@ -70,10 +70,8 @@ const HomePage = (props) => {
                             <img src = {item.image} class='card-img-top'></img>
                             <div class='card-body'>
                                 <h3 class='card-title'>{item.name}</h3>
-                                <p class='card-text'>Price: {item.price}</p>
-                                <p class='card-text'>Gender: {item.gender}</p>
-                                <p class='card-text'>Size: {item.clothing_size}</p>
-                                <p class='card-text'>Description: {item.description}</p>
+                                <p class='card-text'>${item.price}</p>
+                                <p class='card-text'>{item.clothing_size}</p>
                             </div>
                         </div>
                         </>
