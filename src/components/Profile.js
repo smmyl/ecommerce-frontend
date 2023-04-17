@@ -35,7 +35,7 @@ const Profile = (props) => {
                     <a class="nav-link" onClick={props.homeToggle}>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" onClick={props.aboutToggle}>About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link">Contact</a>
