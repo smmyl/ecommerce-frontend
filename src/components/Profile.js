@@ -15,7 +15,7 @@ const Profile = (props) => {
     }
 
     return (
-        <>
+        <div class='profile-container'>
             <h1>Profile Page</h1>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -65,7 +65,7 @@ const Profile = (props) => {
                 )
             })}
             </div>
-        </>
+        </div>
     )
 }
 
