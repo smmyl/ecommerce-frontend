@@ -1,11 +1,15 @@
 import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Profile from './components/Profile'
 import Add from './components/Add'
-import Edit from './components/Edit'
 import HomePage from './components/HomePage'
-
 const App = () => {
+  
+  const [items, setItems] = useState([])
+  const [home, setHome] = useState(true)
+  const [profile, setProfile] = useState(false)
+
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
       setItems(response.data)
@@ -32,9 +36,9 @@ const App = () => {
     })
   }
 
-  const [items, setItems] = useState([])
-  const [home, setHome] = useState(true)
-  const [profile, setProfile] = useState(false)
+
+
+
 
   const homeToggle = () => {
     setHome(true)
@@ -66,13 +70,19 @@ const App = () => {
       )}
       {profile ? (
         <>
+          <Profile 
+            items={items}
+            handleCreate={handleCreate}
+            handleUpdate={handleUpdate}
+            handleDelete={handleDelete}
+          />
         </>
       ) : (
         <>
         </>
       )}
 
-      <Add handleCreate={handleCreate}/>
+      {/* <Add handleCreate={handleCreate}/> */}
       {/* <div className='items'>
         {items.map((item) => {
           return (
