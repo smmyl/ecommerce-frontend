@@ -42,7 +42,7 @@ const HomePage = (props) => {
                 {props.items.map((item) => {
                     return (
                         <div className='item' key={item.id}>
-                        <img src = {item.image}></img>
+                        <img src = {item.image} alt='' />
                         <h3>Name: {item.name}</h3>
                         <h4>Price: {item.price}</h4>
                         <h4>Gender: {item.gender}</h4>

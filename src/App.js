@@ -2,13 +2,15 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Profile from './components/Profile'
-import Add from './components/Add'
+import Search from './components/Search';
+import About from './components/About';
 import HomePage from './components/HomePage'
 const App = () => {
   
   const [items, setItems] = useState([])
   const [home, setHome] = useState(true)
   const [profile, setProfile] = useState(false)
+  const [about, setAbout] = useState(false)
 
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
@@ -37,16 +39,21 @@ const App = () => {
   }
 
 
-
-
-
   const homeToggle = () => {
     setHome(true)
     setProfile(false)
+    setAbout(false)
   }
   const profileToggle = () => {
     setHome(false)
     setProfile(true)
+    setAbout(false)
+  }
+
+  const aboutToggle = () => {
+    setAbout(true)
+    setHome(false)
+    setProfile(false)
   }
 
   useEffect(() => {
@@ -55,7 +62,13 @@ const App = () => {
 
   return (
     <>
-      <h1>Shopifee</h1>
+      <nav>
+        <h1>Shopifee</h1>
+        <Search items={items} />
+        <button onClick={aboutToggle}>About</button>
+      </nav>
+      
+      
       <button onClick={homeToggle}>home</button>
       <button onClick={profileToggle}>profile</button>
       {home ? (
@@ -76,6 +89,15 @@ const App = () => {
             handleUpdate={handleUpdate}
             handleDelete={handleDelete}
           />
+        </>
+      ) : (
+        <>
+        </>
+      )}
+
+      {about ? (
+        <>
+          <About />
         </>
       ) : (
         <>
