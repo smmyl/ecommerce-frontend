@@ -38,7 +38,6 @@ const App = () => {
     })
   }
 
-
   const homeToggle = () => {
     setHome(true)
     setProfile(false)
