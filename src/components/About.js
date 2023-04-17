@@ -3,6 +3,30 @@ const About = (props) => {
     
     return (
         <>
+             <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link " onClick={props.profileToggle}>Profile</a>
+                </li>
+                {/* <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Clothes</a>
+                    <a class="dropdown-item" href="#">Shoes</a>
+                    <a class="dropdown-item" href="#">Accessories</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" onClick={props.homeToggle}>Home</a>
+                    </div>
+                </li> */}
+                <li class="nav-item">
+                    <a class="nav-link" onClick={props.homeToggle}>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" onClick={props.aboutToggle}>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Contact</a>
+                </li>
+            </ul>
             <p>Welcome to SwiftShop! Our mission is to provide a seamless online shopping experience for our customers.
             <br/>
             <br/>

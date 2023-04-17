@@ -62,19 +62,14 @@ const App = () => {
 
   return (
     <>
-      <nav>
-        <h1>Shopifee</h1>
-        <Search items={items} />
-        <button onClick={aboutToggle}>About</button>
-      </nav>
-      
-      
-      <button onClick={homeToggle}>home</button>
-      <button onClick={profileToggle}>profile</button>
+      <h1>Shopifee</h1>
       {home ? (
         <>
           <HomePage
             items={items}
+            homeToggle={homeToggle}
+            profileToggle={profileToggle}
+            aboutToggle={aboutToggle}
           />
         </>
       ) : (
@@ -85,6 +80,9 @@ const App = () => {
         <>
           <Profile 
             items={items}
+            homeToggle={homeToggle}
+            profileToggle={profileToggle}
+            aboutToggle={aboutToggle}
             handleCreate={handleCreate}
             handleUpdate={handleUpdate}
             handleDelete={handleDelete}
@@ -97,7 +95,11 @@ const App = () => {
 
       {about ? (
         <>
-          <About />
+          <About 
+          aboutToggle={aboutToggle}
+          homeToggle={homeToggle}
+          profileToggle={profileToggle}
+          />
         </>
       ) : (
         <>
