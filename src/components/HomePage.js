@@ -44,7 +44,7 @@ const HomePage = (props) => {
                         <div className='item' key={item.id}>
                         <img src = {item.image}></img>
                         <h3>Name: {item.name}</h3>
-                        <h4>P rice: {item.price}</h4>
+                        <h4>Price: {item.price}</h4>
                         <h4>Gender: {item.gender}</h4>
                         <h4>Size: {item.clothing_size}</h4>
                         <p>Description: {item.description}</p>
