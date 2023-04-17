@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+# Overview
+
+# Technologies Used
+ Python | React | Express | MongoDB | CSS | JavaScript | HTML | Version Control | Node
+# Planning
+[link to Miro](https://miro.com/app/board/uXjVMUXzGAQ=/?share_link_id=878601131342)
+# BackEnd
+[link to backend github](https://github.com/smmyl/ecommerce-backend)
+# Difficulties
+ We wanted to get the Login authorization set up but we were not able to. Display is just to '#' page.
+=======
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +80,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+>>>>>>> 92e6dc4c1c4b2af8016c015b47261eeccb6e771d

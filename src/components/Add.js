@@ -14,61 +14,83 @@ const Add = (props) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='item_category'>Category: </label>
-                <select type='text' id='item_category' name='item_category' onChange={handleChange}>
-                    <option>Clothing</option>
-                    <option>Shoes</option>
-                    <option>Acessories</option>
-                </select>
-                <br/>
-                <br/>
-                <label htmlFor='image'>Image URL: </label>
-                <input type='url' name='image' onChange={handleChange}/>
-                <br/>
-                <br/>
-                <label htmlFor='gender'>Gender: </label>
-                <select type='text' id = 'gender' name='gender' onChange={handleChange}>
-                    <option>M</option>
-                    <option>F</option>
-                    <option>Neutral</option>
-                </select>
-                <br/>
-                <br/>
-                <label htmlFor='name'>Name: </label>
-                <input type='text' name='name' onChange={handleChange}/>
-                <br/>
-                <br/>
-                <label htmlFor='price'>Price: </label>
-                <input type='number' name='price' onChange={handleChange}/>
-                <br/>
-                <br/>
-                <label htmlFor='tags'>Tags: </label>
-                <input type='text' name='tags' onChange={handleChange}/>
-                <br/>
-                <br/>
-                <label htmlFor='clothing_size'>Clothing size: </label>
-                <select type='text' name='clothing_size' onChange={handleChange}>
-                    <option>XS</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>XXL</option>
-                </select>
-                <br/>
-                <br/>
-                <label htmlFor='shoe_size'>Shoe size: </label>
-                <select type='number' name='shoe_size' onChange={handleChange}>
-                    <option>0</option><option>0.5</option><option>1</option><option>1.5</option><option>2</option><option>3</option><option>3.5</option><option>4</option><option>4.5</option><option>5</option><option>5.5</option><option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option><option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option><option>11</option><option>11.5</option><option>12</option><option>12.5</option><option>13</option><option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option><option>16</option><option>16.5</option><option>17</option>
-                </select>
-                <br/>
-                <br/>
-                <label htmlFor='description'>Description: </label>
-                <br/>
-                <textarea type='text' name='description' rows='10' cols='50' onChange={handleChange}/>
-                <br/>
-                <input type='submit' value='Add' />
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='item_category'>Category: </label>
+                    <div class="col-sm-2">
+                        <select class='form-control' type='text' id='item_category' name='item_category' onChange={handleChange}>
+                            <option>Clothing</option>
+                            <option>Shoes</option>
+                            <option>Acessories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='image'>Image URL: </label>
+                    <div class="col-sm-8">
+                        <input class='form-control' type='url' name='image' onChange={handleChange} required/>
+                        <div class='invalid-feedback'>
+                            Please type in an image url.
+                        </div>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='gender'>Gender: </label>
+                    <div class="col-sm-1">
+                        <select class='form-control' type='text' id = 'gender' name='gender' onChange={handleChange}>
+                            <option>M</option>
+                            <option>F</option>
+                            <option>Neutral</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='name'>Name: </label>
+                    <div class="col-sm-3">
+                        <input class='form-control' type='text' name='name' onChange={handleChange}/>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='price'>Price: </label>
+                    <div class="col-sm-2">
+                        <input class='form-control' type='number' name='price' onChange={handleChange}/>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='tags'>Tags: </label>
+                    <div class="col-sm-2">
+                        <input class='form-control' type='text' name='tags' onChange={handleChange}/>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                <label class="col-sm-2 col-form-label" htmlFor='clothing_size'>Clothing size: </label>
+                    <div class="col-sm-1">
+                        <select class='form-control' type='text' name='clothing_size' onChange={handleChange}>
+                            <option>XS</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                            <option>XXL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='shoe_size'>Shoe size: </label>
+                    <div class="col-sm-1">
+                        <select class='form-control' type='number' name='shoe_size' onChange={handleChange}>
+                            <option>0</option><option>0.5</option><option>1</option><option>1.5</option><option>2</option><option>3</option><option>3.5</option><option>4</option><option>4.5</option><option>5</option><option>5.5</option><option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option><option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option><option>11</option><option>11.5</option><option>12</option><option>12.5</option><option>13</option><option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option><option>16</option><option>16.5</option><option>17</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-form-label" htmlFor='description'>Description: </label>
+                    <div class="col-sm-6">
+                        <textarea class='form-control' type='text' name='description' rows='10' cols='50' onChange={handleChange}/>
+                    </div>
+                </div>
+                    <input type='submit' value='Add' />
             </form>  
+            <button onClick={props.hideAdd}>Cancel</button>
         </>
     )
 }
