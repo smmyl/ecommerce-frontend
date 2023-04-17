@@ -1,16 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@600&display=swap');
+body {
+    font-family: 'Bebas Neue', cursive;
+    background-color: tan;
+}
 .home-container {
-  display: flex;
-  flex-direction: column;
 }
 
-.items{
+.about-container {
+  font-family: 'Dosis', sans-serif;
+}
+.items {
   display: flex;
 }
 .card {
   width: 300px;
 }
-
-#logo {
-  font-family: 'Oswald', sans-serif;
+.card-body {
+  padding: 20px;
+  background-color: rgba(210, 180, 140, 0.413);
 }

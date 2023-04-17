@@ -36,6 +36,7 @@ const App = () => {
       getItems()
     })
   }
+
   
   const homeToggle = () => {
     setHome(true)
@@ -60,7 +61,7 @@ const App = () => {
 
   return (
     <>
-      <h1 id='logo'>SwiftShop</h1>
+      <h1>Shopifee</h1>
       {home ? (
         <>
           <HomePage
@@ -103,24 +104,7 @@ const App = () => {
         <>
         </>
       )}
-
-      {/* <Add handleCreate={handleCreate}/> */}
-      {/* <div className='items'>
-        {items.map((item) => {
-          return (
-            <div className='item' key={item.id}>
-              <img src = {item.image}></img>
-              <h3>Name: {item.name}</h3>
-              <h4>Price: {item.price}</h4>
-              <h4>Gender: {item.gender}</h4>
-              <h4>Size: {item.clothing_size}</h4>
-              <p>Description: {item.description}</p>
-              <Edit handleDelete={handleDelete} handleUpdate={handleUpdate} item={item}/>
-            </div>
-          )
-        })}
-      </div> */}
-    </>
+    </div>
   )
 }
 export default App;

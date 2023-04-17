@@ -2,7 +2,7 @@ const About = (props) => {
 
     
     return (
-        <>
+        <div class='about-container'>
             <h1>About</h1>
              <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -44,7 +44,7 @@ const About = (props) => {
             <br/>
             <br/>
             Thank you for visiting SwiftShop. We hope you enjoy your shopping experience with us!</p>
-        </>
+        </div>
     )
 }
 
