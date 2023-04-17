@@ -5,10 +5,10 @@ import Profile from './components/Profile'
 import Add from './components/Add'
 import HomePage from './components/HomePage'
 const App = () => {
-
-  let [items, setItems] = useState([])
-  const [item, setItem] = useState()
-  const [click, setClick] = useState(false)
+  
+  const [items, setItems] = useState([])
+  const [home, setHome] = useState(true)
+  const [profile, setProfile] = useState(false)
 
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
@@ -35,17 +35,18 @@ const App = () => {
       getItems()
     })
   }
-  const handleChange = (event) => {
-    setItem({...item, [event.target.name]: event.target.value })
-}
 
-const handleSubmit = (event) => {
-  event.preventDefault()
-  handleCreate(item)
-}
 
-  const showProfile = () => {
-    setClick(true)
+
+
+
+  const homeToggle = () => {
+    setHome(true)
+    setProfile(false)
+  }
+  const profileToggle = () => {
+    setHome(false)
+    setProfile(true)
   }
 
   useEffect(() => {
@@ -54,16 +55,34 @@ const handleSubmit = (event) => {
 
   return (
     <>
-      <h1>App</h1>
-      <div className='items'>
-        <button onClick={showProfile}>Profile Page</button>
-        {click ? <Profile items={items} handleCreate={handleCreate} handleDelete={handleDelete} handleUpdate={handleUpdate} handleChange={handleChange} handleSubmit={handleSubmit} item={item} /> : null}
-      </div>
-      <HomePage
-        items={items}
-      />
-      <h1>MarketPlace App</h1>
-      <Add handleCreate={handleCreate}/>
+      <h1>Shopifee</h1>
+      <button onClick={homeToggle}>home</button>
+      <button onClick={profileToggle}>profile</button>
+      {home ? (
+        <>
+          <HomePage
+            items={items}
+          />
+        </>
+      ) : (
+        <>
+        </>
+      )}
+      {profile ? (
+        <>
+          <Profile 
+            items={items}
+            handleCreate={handleCreate}
+            handleUpdate={handleUpdate}
+            handleDelete={handleDelete}
+          />
+        </>
+      ) : (
+        <>
+        </>
+      )}
+
+      {/* <Add handleCreate={handleCreate}/> */}
       {/* <div className='items'>
         {items.map((item) => {
           return (

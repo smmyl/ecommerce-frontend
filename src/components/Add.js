@@ -69,6 +69,7 @@ const Add = (props) => {
                 <br/>
                 <input type='submit' value='Add' />
             </form>  
+            <button onClick={props.hideAdd}>Cancel</button>
         </>
     )
 }
