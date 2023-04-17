@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Add from './Add'
 import Edit from './Edit'
 
-const Profile = (props, items, item, handleChange, handleCreate, handleDelete, handleUpdate, handleSubmit) => {
+const Profile = (props) => {
 
     const [click, setClick] = useState(false)
 
@@ -18,7 +18,7 @@ const Profile = (props, items, item, handleChange, handleCreate, handleDelete, h
         <>
             <h1>Profile Page</h1>
             <button onClick={showAdd}>Add Item</button>
-            {click ?  <Add click handleChange={handleChange} handleSubmit={handleSubmit} item={item}/> : null}
+            {click ?  <Add click handleChange={props.handleChange} handleSubmit={props.handleSubmit} items={props.items}/> : null}
             <button onClick={hideAdd}>Cancel</button>
             <div className='items'>
             {props.items.map((item) => {
@@ -30,7 +30,7 @@ const Profile = (props, items, item, handleChange, handleCreate, handleDelete, h
                     <h5>Gender: {props.items.gender}</h5>
                     <h5>Size: {props.items.clothing_size}</h5>
                     <p>Description: {props.items.description}</p>
-                    <Edit handleDelete={handleDelete} handleUpdate={handleUpdate} item={item}/>
+                    <Edit handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} item={item}/>
                     </div>
                 )
             })}
