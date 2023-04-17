@@ -6,8 +6,6 @@ import Edit from './components/Edit'
 import HomePage from './components/HomePage'
 
 const App = () => {
-  const [items, setItems] = useState([])
-
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
       setItems(response.data)
@@ -33,16 +31,47 @@ const App = () => {
       getItems()
     })
   }
+  
+  const [items, setItems] = useState([])
+  const [home, setHome] = useState(true)
+  const [profile, setProfile] = useState(false)
+
+  const homeToggle = () => {
+    setHome(true)
+    setProfile(false)
+  }
+  const profileToggle = () => {
+    setHome(false)
+    setProfile(true)
+  }
+
   useEffect(() => {
     getItems()
   }, [])
 
   return (
     <>
-      <h1>App</h1>
-      <HomePage
-        items={items}
-      />
+      <h1>Shopifee</h1>
+      <button onClick={homeToggle}>home</button>
+      <button onClick={profileToggle}>profile</button>
+      {home ? (
+        <>
+          <HomePage
+            items={items}
+          />
+        </>
+      ) : (
+        <>
+        </>
+      )}
+      {profile ? (
+        <>
+        </>
+      ) : (
+        <>
+        </>
+      )}
+
       <Add handleCreate={handleCreate}/>
       {/* <div className='items'>
         {items.map((item) => {
