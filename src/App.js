@@ -72,7 +72,7 @@ const App = () => {
         </>
       )}
 
-      <Add handleCreate={handleCreate}/>
+      {/* <Add handleCreate={handleCreate}/> */}
       {/* <div className='items'>
         {items.map((item) => {
           return (
