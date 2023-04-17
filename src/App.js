@@ -35,11 +35,7 @@ const App = () => {
       getItems()
     })
   }
-
-
-
-
-
+  
   const homeToggle = () => {
     setHome(true)
     setProfile(false)
