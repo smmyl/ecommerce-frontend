@@ -3,9 +3,10 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
+import HomePage from './components/HomePage'
 
 const App = () => {
-let[items, setItems] = useState([])
+  const [items, setItems] = useState([])
 
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
@@ -39,22 +40,25 @@ let[items, setItems] = useState([])
   return (
     <>
       <h1>App</h1>
+      <HomePage
+        items={items}
+      />
       <Add handleCreate={handleCreate}/>
-      <div className='items'>
+      {/* <div className='items'>
         {items.map((item) => {
           return (
             <div className='item' key={item.id}>
-              <image src = {item.image}></image>
-              <h4>Name: {item.name}</h4>
-              <h5>Price: {item.price}</h5>
-              <h5>Gender: {item.gender}</h5>
-              <h5>Size: {item.clothing_size}</h5>
+              <img src = {item.image}></img>
+              <h3>Name: {item.name}</h3>
+              <h4>Price: {item.price}</h4>
+              <h4>Gender: {item.gender}</h4>
+              <h4>Size: {item.clothing_size}</h4>
               <p>Description: {item.description}</p>
               <Edit handleDelete={handleDelete} handleUpdate={handleUpdate} item={item}/>
             </div>
           )
         })}
-      </div>
+      </div> */}
     </>
   )
 }
