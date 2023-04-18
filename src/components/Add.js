@@ -28,7 +28,7 @@ const Add = (props) => {
                 <div class='form-group row'>
                     <label class="col-sm-2 col-form-label" htmlFor='image'>Image URL: </label>
                     <div class="col-sm-8">
-                        <input class='form-control' type='text' name='image' onChange={handleChange}/>
+                        <input class='form-control' type='text' name='image' onChange={handleChange} />
                     </div>
                 </div>
                 <div class='form-group row'>
