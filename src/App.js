@@ -4,12 +4,14 @@ import axios from 'axios'
 import Profile from './components/Profile'
 import About from './components/About';
 import HomePage from './components/HomePage'
+import Contact from './components/Contact';
 const App = () => {
   
   const [items, setItems] = useState([])
   const [home, setHome] = useState(true)
   const [profile, setProfile] = useState(false)
   const [about, setAbout] = useState(false)
+  const [contact, setContact] = useState(false)
 
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
@@ -42,17 +44,27 @@ const App = () => {
     setHome(true)
     setProfile(false)
     setAbout(false)
+    setContact(false)
   }
   const profileToggle = () => {
     setHome(false)
     setProfile(true)
     setAbout(false)
+    setContact(false)
   }
 
   const aboutToggle = () => {
     setAbout(true)
     setHome(false)
     setProfile(false)
+    setContact(false)
+  }
+
+  const contactToggle = () => {
+    setAbout(false)
+    setHome(false)
+    setProfile(false)
+    setContact(true)
   }
 
   useEffect(() => {
@@ -61,7 +73,10 @@ const App = () => {
 
   return (
     <>
-      <h1>Shopifee</h1>
+     <div className='container'>
+     <div class='swiftshop'>
+        <h1>SwiftShop</h1>
+      </div>
       {home ? (
         <>
           <HomePage
@@ -69,6 +84,7 @@ const App = () => {
             homeToggle={homeToggle}
             profileToggle={profileToggle}
             aboutToggle={aboutToggle}
+            contactToggle={contactToggle}
           />
         </>
       ) : (
@@ -82,6 +98,7 @@ const App = () => {
             homeToggle={homeToggle}
             profileToggle={profileToggle}
             aboutToggle={aboutToggle}
+            contactToggle={contactToggle}
             handleCreate={handleCreate}
             handleUpdate={handleUpdate}
             handleDelete={handleDelete}
@@ -98,13 +115,29 @@ const App = () => {
           aboutToggle={aboutToggle}
           homeToggle={homeToggle}
           profileToggle={profileToggle}
+          contactToggle={contactToggle}
           />
         </>
       ) : (
         <>
         </>
       )}
-    </div>
+      {contact ? (
+        <>
+          <Contact 
+          aboutToggle={aboutToggle}
+          homeToggle={homeToggle}
+          profileToggle={profileToggle}
+          contactToggle={contactToggle}
+          />
+        </>
+      ) : (
+        <>
+        </>
+      )}
+      </div>
+    </>
   )
 }
+
 export default App;

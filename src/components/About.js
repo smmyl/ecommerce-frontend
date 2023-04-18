@@ -25,7 +25,7 @@ const About = (props) => {
                     <a class="nav-link active" onClick={props.aboutToggle}>About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Contact</a>
+                    <a class="nav-link" onClick={props.contactToggle}>Contact</a>
                 </li>
             </ul>
             <p>Welcome to SwiftShop! Our mission is to provide a seamless online shopping experience for our customers.

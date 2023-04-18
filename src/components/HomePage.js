@@ -80,7 +80,7 @@ const HomePage = (props) => {
                     <a class="nav-link" onClick={props.aboutToggle}>About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Contact</a>
+                    <a class="nav-link" onClick={props.contactToggle}>Contact</a>
                 </li>
             </ul>
             <button onClick = {allToggle}>ALL</button>
