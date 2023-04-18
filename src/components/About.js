@@ -7,18 +7,14 @@ const About = (props) => {
                 <li class="nav-item">
                     <a class="nav-link " onClick={props.profileToggle}>Profile</a>
                 </li>
-                {/* <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Clothes</a>
-                    <a class="dropdown-item" href="#">Shoes</a>
-                    <a class="dropdown-item" href="#">Accessories</a>
+                    <a class="dropdown-item" href="#">Menswear</a>
+                    <a class="dropdown-item" href="#">Womenswear</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" onClick={props.homeToggle}>Home</a>
+                    <a class="dropdown-item" onClick={props.homeToggle}>Show All</a>
                     </div>
-                </li> */}
-                <li class="nav-item">
-                    <a class="nav-link" onClick={props.homeToggle}>Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" onClick={props.aboutToggle}>About</a>
@@ -27,7 +23,11 @@ const About = (props) => {
                     <a class="nav-link">Contact</a>
                 </li>
             </ul>
-            <p>Welcome to SwiftShop! Our mission is to provide a seamless online shopping experience for our customers.
+            <div class='imgcont'>
+                <img class='abtimg' src='https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img>
+                <h1 class='imgtitle' onClick={props.homeToggle}>SWIFTSHOP</h1>
+            </div>
+            <p class='about-body'>Welcome to SwiftShop! Our mission is to provide a seamless online shopping experience for our customers.
             <br/>
             <br/>
             Our team of talented and dedicated developers has worked tirelessly to create a user-friendly and visually appealing e-commerce platform. We believe that our website reflects our commitment to quality, innovation, and customer satisfaction.

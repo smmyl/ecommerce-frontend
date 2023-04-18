@@ -61,11 +61,11 @@ const App = () => {
 
   return (
     <div class='container'>
-      <div class='swiftshop'>
-        <h1>SwiftShop</h1>
-      </div>
       {home ? (
         <>
+          <div class='swiftshop'>
+            <h1 onClick={homeToggle}>SwiftShop</h1>
+          </div>
           <HomePage
             items={items}
             homeToggle={homeToggle}
@@ -79,6 +79,9 @@ const App = () => {
       )}
       {profile ? (
         <>
+          <div class='swiftshop'>
+            <h1 onClick={homeToggle}>SwiftShop</h1>
+          </div>
           <Profile 
             items={items}
             homeToggle={homeToggle}
