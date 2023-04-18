@@ -3,7 +3,6 @@ const About = (props) => {
     
     return (
         <div class='about-container'>
-            <h1>About</h1>
              <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link " onClick={props.profileToggle}>Profile</a>

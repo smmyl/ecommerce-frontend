@@ -2,6 +2,8 @@ import {useState} from 'react'
 
 const HomePage = (props) => {
     const [all, setAll] = useState(true);
+    const [men, setMen] = useState(false);
+    const [women, setWomen] = useState(false);
     const [clothes, setClothes] = useState(false);
     const [shoes, setShoes] = useState(false);
     const [accessories, setAccessories] = useState(false);
@@ -30,25 +32,26 @@ const HomePage = (props) => {
         setShoes(false)
         setAccessories(true)
     }
+    const menToggle = () => {
+        setMen(true)
+    }
+    const womenToggle = () => {
+        setWomen(true)
+    }
     return (
         <div class='home-container'>  
-            <h1>HomePage</h1>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" onClick={props.profileToggle}>Profile</a>
                 </li>
-                {/* <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onClick={props.homeToggle}>Home</a>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Clothes</a>
-                    <a class="dropdown-item" href="#">Shoes</a>
-                    <a class="dropdown-item" href="#">Accessories</a>
+                    <a class="dropdown-item" href="#">Menswear</a>
+                    <a class="dropdown-item" href="#">Womenswear</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" onClick={props.homeToggle}>Home</a>
+                    <a class="dropdown-item" onClick={props.homeToggle}>Show All</a>
                     </div>
-                </li> */}
-                <li class="nav-item">
-                    <a class="nav-link active" onClick={props.homeToggle}>Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" onClick={props.aboutToggle}>About</a>
@@ -57,13 +60,20 @@ const HomePage = (props) => {
                     <a class="nav-link">Contact</a>
                 </li>
             </ul>
-            <button onClick = {allToggle}>ALL</button>
-            <button onClick = {clothesToggle}>Clothes</button>
-            <button onClick = {shoesToggle}>Shoes</button>
-            <button onClick = {accessoriesToggle}>Accessories</button>
+            <div class='categories'>
+                <button class='btn btn-dark'onClick = {allToggle}>ALL</button>
+                <button class='btn btn-dark' onClick = {clothesToggle}>Clothes</button>
+                <button class='btn btn-dark' onClick = {shoesToggle}>Shoes</button>
+                <button class='btn btn-dark' onClick = {accessoriesToggle}>Accessories</button>
+            </div>
+   
             {all ? (
+                <>
+                <h4 class='nav-pointer'>Home > All</h4>
+                <h1>All</h1>
                 <div className='items'>
                 {props.items.map((item) => {
+                    if (item.gender = 'M') {
                     return (
                         <>
                         <div class='card' key={item.id}>
@@ -76,14 +86,22 @@ const HomePage = (props) => {
                         </div>
                         </>
                     )
+                    } else {
+                        return(
+                            <>
+                            </>
+                        )
+                    }
                     })}
                 </div>
+                </>
             ) : (
                 <>
                 </>
             )}
             {clothes ? (
                 <>
+                <h4 class='nav-pointer'>Home > Clothes</h4>
                     <h1>CLOTHES</h1>
                 </>
             ) : (
@@ -92,6 +110,7 @@ const HomePage = (props) => {
             )}
             {shoes ? (
                 <>
+                <h4 class='nav-pointer'>Home > Shoes</h4>
                     <h1>SHOES</h1>
                 </>
             ) : (
@@ -100,6 +119,7 @@ const HomePage = (props) => {
             )}
             {accessories ? (
                 <>
+                <h4 class='nav-pointer'>Home > Accessories</h4>
                     <h1>ACS</h1>
                 </>
             ) : (
