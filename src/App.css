@@ -3,9 +3,18 @@ body {
     font-family: 'Bebas Neue', cursive;
     background-color: tan;
 }
+h1 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.434);
+  padding: 0 10px 0 10px;
+  text-shadow: 1px 1px;
+}
 .swiftshop h1 {
   font-size: 4em;
   margin: 10px;
+  text-align: left;
+  background-color: unset;
+  text-shadow: 2px 2px;
 }
 .about-container {
   margin-top: 10px;
@@ -30,6 +39,8 @@ body {
   transform: translate(-50%, -50%);
   font-size: 10em;
   font-family: 'Bebas Neue', cursive;
+  background-color: unset;
+  text-shadow: 2px 2px 2px;
 }
 .items {
   display: flex;
@@ -54,6 +65,7 @@ body {
   width: 200px;
   height: 350px;
   margin: 10px;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.92);
 }
 #profcard {
   width: 400px;
@@ -66,6 +78,7 @@ body {
 }
 button {
   margin: 10px 5px 10px 5px;
+  box-shadow: 1px 1px;
 }
 #addbtn {
   margin-top: 10px;
@@ -95,7 +108,8 @@ a:hover {
   display: flex;
 }
 .nav-pointer {
-  padding: 10px 10px 10px 0;
+  padding: 10px 10px 10px 10px;
+  text-shadow: 1px 1px;
 }
 .footer {
   text-align: center;
