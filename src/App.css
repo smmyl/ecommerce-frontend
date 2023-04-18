@@ -37,6 +37,9 @@ body {
   margin: 20px;
   justify-content: center;
 }
+#homeitems {
+  justify-content: left;
+}
 #profitems {
   display: flex;
   flex-direction: wrap;
@@ -65,7 +68,6 @@ button {
   margin: 10px 5px 10px 5px;
 }
 #addbtn {
-  margin: auto;
   margin-top: 10px;
 }
 #editbtn {
@@ -74,9 +76,24 @@ button {
 .add-container {
   margin: 10px;
 }
+.yourshop {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 h3 {
   text-align: center;
+  margin-top: 10px;
 }
 h1:hover {
   cursor: pointer;
+}
+a:hover {
+  cursor: pointer;
+}
+.categories {
+  display: flex;
+}
+.nav-pointer {
+  padding: 10px 10px 10px 0;
 }

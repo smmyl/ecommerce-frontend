@@ -8,9 +8,9 @@ import HomePage from './components/HomePage'
 const App = () => {
   
   const [items, setItems] = useState([])
-  const [home, setHome] = useState(true)
+  const [home, setHome] = useState(false)
   const [profile, setProfile] = useState(false)
-  const [about, setAbout] = useState(false)
+  const [about, setAbout] = useState(true)
 
   const getItems = () => {
     axios.get('http://localhost:8000/api/items').then((response) => {
@@ -42,17 +42,20 @@ const App = () => {
     setHome(true)
     setProfile(false)
     setAbout(false)
+    getItems()
   }
   const profileToggle = () => {
     setHome(false)
     setProfile(true)
     setAbout(false)
+    getItems()
   }
 
   const aboutToggle = () => {
     setAbout(true)
     setHome(false)
     setProfile(false)
+    getItems()
   }
 
   useEffect(() => {
@@ -71,6 +74,7 @@ const App = () => {
             homeToggle={homeToggle}
             profileToggle={profileToggle}
             aboutToggle={aboutToggle}
+            getItems={getItems}
           />
         </>
       ) : (
@@ -90,6 +94,7 @@ const App = () => {
             handleCreate={handleCreate}
             handleUpdate={handleUpdate}
             handleDelete={handleDelete}
+            getItems={getItems}
           />
         </>
       ) : (
@@ -103,6 +108,7 @@ const App = () => {
           aboutToggle={aboutToggle}
           homeToggle={homeToggle}
           profileToggle={profileToggle}
+          getItems={getItems}
           />
         </>
       ) : (

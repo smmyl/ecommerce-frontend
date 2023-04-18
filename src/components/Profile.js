@@ -8,17 +8,19 @@ const Profile = (props) => {
 
     const showAdd = () => {
         setClick(true)
+        props.getItems()
     }
 
     const hideAdd = () => {
         setClick(false)
+        props.getItems()
     }
 
     return (
         <div class='profile-container'>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" onClick={props.profileToggle}>Profile</a>
+                    <a class="nav-link" onClick={props.aboutToggle}>About</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
@@ -30,7 +32,7 @@ const Profile = (props) => {
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onClick={props.aboutToggle}>About</a>
+                    <a class="nav-link active" onClick={props.profileToggle}>Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link">Contact</a>
@@ -44,12 +46,23 @@ const Profile = (props) => {
                     items={props.items} 
                     hideAdd={hideAdd}
                     handleCreate={props.handleCreate}
+                    getItems={props.getItems}
                     /> 
                 </>
                 : 
-                <button id='addbtn' type='button' class='btn btn-dark'  onClick={showAdd}>Add Item</button>
+                <>
+                    <h3>Your Shop</h3>
+                    <div class='yourshop'>
+                        <button id='addbtn' type='button' class='btn btn-dark'  onClick={showAdd}>Add Item</button>
+                        <nav class="navbar navbar-light">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
+                    </div>
+                </>
                 }
-            <h3>Your Shop</h3>
             <div id='profitems' className='items'>
             {props.items.map((item) => {
                 return (
@@ -63,7 +76,12 @@ const Profile = (props) => {
                             <p class='card-text'>Gender: {item.gender}</p>
                             <p class='card-text'>Size: {item.clothing_size}</p>
                             <p class='card-text'>Description: {item.description}</p>
-                        <Edit handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} item={item}/>
+                        <Edit 
+                            handleDelete={props.handleDelete}
+                            handleUpdate={props.handleUpdate}
+                            item={item}
+                            getItems={props.getItems}
+                        />
                         </div>
                     </div>
                 )

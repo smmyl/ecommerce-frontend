@@ -18,6 +18,7 @@ const Add = (props) => {
                     <label class="col-sm-2 col-form-label" htmlFor='item_category'>Category: </label>
                     <div class="col-sm-2">
                         <select class='form-control' type='text' id='item_category' name='item_category' onChange={handleChange}>
+                            <option selected disabled value=''>Choose...</option>
                             <option>Clothing</option>
                             <option>Shoes</option>
                             <option>Acessories</option>
@@ -37,6 +38,7 @@ const Add = (props) => {
                     <label class="col-sm-2 col-form-label" htmlFor='gender'>Gender: </label>
                     <div class="col-sm-2">
                         <select class='form-control' type='text' id = 'gender' name='gender' onChange={handleChange}>
+                            <option selected disabled value=''>Choose...</option>
                             <option>M</option>
                             <option>F</option>
                             <option>Neutral</option>
@@ -65,6 +67,7 @@ const Add = (props) => {
                 <label class="col-sm-2 col-form-label" htmlFor='clothing_size'>Clothing size: </label>
                     <div class="col-sm-2">
                         <select class='form-control' type='text' name='clothing_size' onChange={handleChange}>
+                            <option selected disabled value=''>Choose...</option>
                             <option>XS</option>
                             <option>S</option>
                             <option>M</option>
@@ -78,6 +81,7 @@ const Add = (props) => {
                     <label class="col-sm-2 col-form-label" htmlFor='shoe_size'>Shoe size: </label>
                     <div class="col-sm-2">
                         <select class='form-control' type='text' name='shoe_size' onChange={handleChange}>
+                            <option selected disabled value=''>Choose...</option>
                             <option>0</option><option>0.5</option><option>1</option><option>1.5</option><option>2</option><option>3</option><option>3.5</option><option>4</option><option>4.5</option><option>5</option><option>5.5</option><option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option><option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option><option>11</option><option>11.5</option><option>12</option><option>12.5</option><option>13</option><option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option><option>16</option><option>16.5</option><option>17</option>
                         </select>
                     </div>

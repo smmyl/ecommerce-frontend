@@ -6,15 +6,18 @@ const Edit = (props) =>  {
 
     const handleChange = (event) => {
         setItem({...item, [event.target.item]: event.target.value})
+        props.getItems()
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleUpdate(item)
+        props.getItems()
     }
 
     const toggleEdit = () => {
         setEdit(true)
+        props.getItems()
     }
 
     return(
@@ -35,7 +38,7 @@ const Edit = (props) =>  {
                     </div>
                     <div class="modal-body">
                         <form id='editform' onSubmit={handleSubmit}>
-                            <label htmlFor='category'>Category </label>
+                            <label htmlFor='category'>Category: </label>
                             <select
                                 name='category'
                                 value={item.category}
