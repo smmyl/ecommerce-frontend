@@ -2,7 +2,6 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Profile from './components/Profile'
-import Search from './components/Search';
 import About from './components/About';
 import HomePage from './components/HomePage'
 const App = () => {
@@ -22,6 +21,8 @@ const App = () => {
     axios.post('http://localhost:8000/api/items', item).then((response) => {
       console.log(response)
       getItems()
+    }).catch((error) => {
+      console.log(error.response)
     })
   }
 
@@ -35,6 +36,8 @@ const App = () => {
     console.log(item)
     axios.put('http://localhost:8000/api/items/'+ item.id, item).then((reponse) => {
       getItems()
+    }).catch((error) => {
+      console.log(error.response)
     })
   }
 
@@ -115,6 +118,9 @@ const App = () => {
         <>
         </>
       )}
+      <div class='footer'>
+        <p>Sammy Liao || Hany Elnasharty || Vidur Gupta</p>
+      </div>
     </div>
   )
 }

@@ -124,6 +124,7 @@ const HomePage = (props) => {
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
                                         <p class='card-text'>{item.clothing_size}</p>
+                                        <p class='card-text'>US {item.shoe_size}</p>
                                     </div>
                                 </div>
                                 ) : (
@@ -142,6 +143,7 @@ const HomePage = (props) => {
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
                                         <p class='card-text'>{item.clothing_size}</p>
+                                        <p class='card-text'>US {item.shoe_size}</p>
                                     </div>
                                 </div>
                                 ) : (
@@ -158,6 +160,7 @@ const HomePage = (props) => {
                                     <h3 class='card-title'>{item.name}</h3>
                                     <p class='card-text'>{item.price}</p>
                                     <p class='card-text'>{item.clothing_size}</p>
+                                    <p class='card-text'>US {item.shoe_size}</p>
                                 </div>
                             </div>
                             </>
@@ -260,7 +263,7 @@ const HomePage = (props) => {
                                     <div class='card-body'>
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
-                                        <p class='card-text'>{item.clothing_size}</p>
+                                        <p class='card-text'>US {item.shoe_size}</p>
                                     </div>
                                 </div>
                                 ) : (
@@ -278,7 +281,7 @@ const HomePage = (props) => {
                                     <div class='card-body'>
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
-                                        <p class='card-text'>{item.clothing_size}</p>
+                                        <p class='card-text'>US {item.shoe_size}</p>
                                     </div>
                                 </div>
                                 ) : (
@@ -296,7 +299,7 @@ const HomePage = (props) => {
                                     <div class='card-body'>
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
-                                        <p class='card-text'>{item.clothing_size}</p>
+                                        <p class='card-text'>U {item.shoe_size}</p>
                                     </div>
                                 </div> 
                                 ) : (
@@ -332,7 +335,7 @@ const HomePage = (props) => {
                                     <div class='card-body'>
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
-                                        <p class='card-text'>{item.clothing_size}</p>
+                                
                                     </div>
                                 </div>
                                 ) : (
@@ -350,7 +353,7 @@ const HomePage = (props) => {
                                     <div class='card-body'>
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
-                                        <p class='card-text'>{item.clothing_size}</p>
+                                       
                                     </div>
                                 </div>
                                 ) : (
@@ -368,7 +371,7 @@ const HomePage = (props) => {
                                     <div class='card-body'>
                                         <h3 class='card-title'>{item.name}</h3>
                                         <p class='card-text'>{item.price}</p>
-                                        <p class='card-text'>{item.clothing_size}</p>
+                                      
                                     </div>
                                 </div> 
                                 ) : (

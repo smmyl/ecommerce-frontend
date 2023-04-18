@@ -25,10 +25,22 @@ const Profile = (props) => {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Menswear</a>
-                    <a class="dropdown-item" href="#">Womenswear</a>
+                    <a class="dropdown-item" 
+                    onClick={()=>{
+                        props.homeToggle();
+
+                    }}>Menswear</a>
+                    <a class="dropdown-item" 
+                    onClick={()=>{
+                        props.homeToggle();
+
+                    }}>Womenswear</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" onClick={props.homeToggle}>Show All</a>
+                    <a class="dropdown-item" 
+                    onClick={()=>{
+                        props.homeToggle();
+
+                        }}>Show All</a>
                     </div>
                 </li>
                 <li class="nav-item">
