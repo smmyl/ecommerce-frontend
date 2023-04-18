@@ -12,7 +12,7 @@ const Add = (props) => {
     }
 
     return (
-        <>
+        <div class='add-container'>
             <form onSubmit={handleSubmit}>
                 <div class='form-group row'>
                     <label class="col-sm-2 col-form-label" htmlFor='item_category'>Category: </label>
@@ -27,7 +27,7 @@ const Add = (props) => {
                 <div class='form-group row'>
                     <label class="col-sm-2 col-form-label" htmlFor='image'>Image URL: </label>
                     <div class="col-sm-8">
-                        <input class='form-control' type='url' name='image' onChange={handleChange} required/>
+                        <input class='form-control' type='text' name='image' onChange={handleChange} required/>
                         <div class='invalid-feedback'>
                             Please type in an image url.
                         </div>
@@ -35,7 +35,7 @@ const Add = (props) => {
                 </div>
                 <div class='form-group row'>
                     <label class="col-sm-2 col-form-label" htmlFor='gender'>Gender: </label>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <select class='form-control' type='text' id = 'gender' name='gender' onChange={handleChange}>
                             <option>M</option>
                             <option>F</option>
@@ -63,7 +63,7 @@ const Add = (props) => {
                 </div>
                 <div class='form-group row'>
                 <label class="col-sm-2 col-form-label" htmlFor='clothing_size'>Clothing size: </label>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <select class='form-control' type='text' name='clothing_size' onChange={handleChange}>
                             <option>XS</option>
                             <option>S</option>
@@ -76,8 +76,8 @@ const Add = (props) => {
                 </div>
                 <div class='form-group row'>
                     <label class="col-sm-2 col-form-label" htmlFor='shoe_size'>Shoe size: </label>
-                    <div class="col-sm-1">
-                        <select class='form-control' type='number' name='shoe_size' onChange={handleChange}>
+                    <div class="col-sm-2">
+                        <select class='form-control' type='text' name='shoe_size' onChange={handleChange}>
                             <option>0</option><option>0.5</option><option>1</option><option>1.5</option><option>2</option><option>3</option><option>3.5</option><option>4</option><option>4.5</option><option>5</option><option>5.5</option><option>6</option><option>6.5</option><option>7</option><option>7.5</option><option>8</option><option>8.5</option><option>9</option><option>9.5</option><option>10</option><option>10.5</option><option>11</option><option>11.5</option><option>12</option><option>12.5</option><option>13</option><option>13.5</option><option>14</option><option>14.5</option><option>15</option><option>15.5</option><option>16</option><option>16.5</option><option>17</option>
                         </select>
                     </div>
@@ -89,9 +89,9 @@ const Add = (props) => {
                     </div>
                 </div>
                     <input type='submit' value='Add' />
+                    <button onClick={props.hideAdd}>Cancel</button>
             </form>  
-            <button onClick={props.hideAdd}>Cancel</button>
-        </>
+        </div>
     )
 }
 

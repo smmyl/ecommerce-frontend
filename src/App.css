@@ -3,19 +3,56 @@ body {
     font-family: 'Bebas Neue', cursive;
     background-color: tan;
 }
-.home-container {
+.swiftshop h1 {
+  font-size: 4em;
+  margin: 10px;
 }
-
 .about-container {
   font-family: 'Dosis', sans-serif;
 }
 .items {
   display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: center;
+}
+#profitems {
+  display: flex;
+  flex-direction: wrap;
+}
+.card-img-top {
+  height: 150px;
+}
+#profcard-img-top {
+  height: 300px;
 }
 .card {
-  width: 300px;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+}
+#profcard {
+  width: 400px;
+  height: 600px;
 }
 .card-body {
   padding: 20px;
   background-color: rgba(210, 180, 140, 0.413);
+  line-height: 15px;
+}
+button {
+  margin: 10px 5px 10px 5px;
+}
+#addbtn {
+  margin: auto;
+  margin-top: 10px;
+}
+#editbtn {
+  width: 40px;
+}
+.add-container {
+  margin: 10px;
+}
+h3 {
+  text-align: center;
 }
