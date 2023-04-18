@@ -47,7 +47,7 @@ const Profile = (props) => {
                     <a class="nav-link active" onClick={props.profileToggle}>Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Contact</a>
+                    <a class="nav-link">Cart</a>
                 </li>
             </ul>
             {click ?  
