@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Overview
 
 # Technologies Used
